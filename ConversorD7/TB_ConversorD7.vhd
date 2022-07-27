@@ -4,10 +4,10 @@ use ieee.std_logic_arith.all;
 use ieee.std_logic_unsigned.all;
 use ieee.numeric_std.all;
 
-entity TB_Display_7 is
-end TB_Display_7;
+entity TB_ConversorD7 is
+end TB_ConversorD7;
 
-architecture Behavioral of TB_Display_7 is
+architecture Behavioral of TB_ConversorD7 is
 
     component Display_7 is
         Port(
