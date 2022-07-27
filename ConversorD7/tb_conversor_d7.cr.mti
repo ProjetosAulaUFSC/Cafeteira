@@ -1,0 +1,49 @@
+{{D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Trabalhos/ConversorD7/ConversorD7.vhd}} {1 {vcom -work work -2002 -explicit {D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Trabalhos/ConversorD7/ConversorD7.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity ConversorD7
+-- Compiling architecture Behavioral of ConversorD7
+
+} {} {}} {D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Trabalhos/ConversorD7/ConversorD7.vhd} {1 {vcom -work work -2002 -explicit {D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Trabalhos/ConversorD7/ConversorD7.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Compiling entity ConversorD7
+-- Compiling architecture Behavioral of ConversorD7
+
+} {} {}} {{D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Trabalhos/ConversorD7/TB_ConversorD7.vhd}} {0 {vcom -work work -2002 -explicit {D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Trabalhos/ConversorD7/TB_ConversorD7.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Compiling entity TB_Display_7
+** Error: (vcom-7) Failed to open library file "D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Trabalhos/ConversorD7/work/tb_display_7" in read/write/execute mode.
+
+No such file or directory. (errno = ENOENT)
+** Error: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Trabalhos/ConversorD7/TB_ConversorD7.vhd(8): VHDL Compiler exiting
+
+} {10.0 11.0 13.0 14.0} {}} {D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Trabalhos/ConversorD7/TB_ConversorD7.vhd} {0 {vcom -work work -2002 -explicit {D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Trabalhos/ConversorD7/TB_ConversorD7.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package NUMERIC_STD
+-- Compiling entity TB_Display_7
+** Error: (vcom-7) Failed to open library file "D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Trabalhos/ConversorD7/work/tb_display_7" in read/write/execute mode.
+
+No such file or directory. (errno = ENOENT)
+** Error: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Trabalhos/ConversorD7/TB_ConversorD7.vhd(8): VHDL Compiler exiting
+
+} {10.0 11.0 13.0 14.0} {}}

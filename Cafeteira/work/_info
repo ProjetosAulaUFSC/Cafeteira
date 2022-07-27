@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+dD:\altera\13.1\work
+Edisplay_7
+Z0 w1658343999
+Z1 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+Z2 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dD:\Users\lsdeo\Documents\Ararangua\Eng. Comp\LDH\Trabalhos
+Z6 8D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Trabalhos/Display_7.vhd
+Z7 FD:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Trabalhos/Display_7.vhd
+l0
+L6
+V573Y=X@?c]DA6VH5i_]ZX0
+!s100 HJSDK[XV4CfYSKNP=En;J3
+Z8 OV;C;10.1d;51
+32
+!i10b 1
+Z9 !s108 1658344025.827000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Trabalhos/Display_7.vhd|
+Z11 !s107 D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Trabalhos/Display_7.vhd|
+Z12 o-work work -2002 -explicit -O0
+Z13 tExplicit 1
+Abehavioral
+R1
+R2
+R3
+R4
+Z14 DEx4 work 9 display_7 0 22 573Y=X@?c]DA6VH5i_]ZX0
+l16
+L15
+Z15 VIcD]]CdSNEOQJ5Mjz?P7Y3
+Z16 !s100 KF`?7aG2SWc@1?QkQ1S9c3
+R8
+32
+!i10b 1
+R9
+R10
+R11
+R12
+R13
+Etb_display_7
+Z17 w1658343601
+Z18 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+R1
+R2
+R3
+R4
+R5
+Z19 8D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Trabalhos/TB_Display_7.vhd
+Z20 FD:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Trabalhos/TB_Display_7.vhd
+l0
+L7
+ViM0oA;]GP[>h]:n4fBd<X1
+R8
+32
+Z21 !s108 1658344025.566000
+Z22 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Trabalhos/TB_Display_7.vhd|
+Z23 !s107 D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Trabalhos/TB_Display_7.vhd|
+R12
+R13
+!s100 a>0J;YON8?3<=21Q8;nf;2
+!i10b 1
+Abehavioral
+R18
+R1
+R2
+R3
+R4
+DEx4 work 12 tb_display_7 0 22 iM0oA;]GP[>h]:n4fBd<X1
+l27
+L10
+Vo^`DK[S6hR=NSnMjO]1iM1
+!s100 _XQShe6mUnlFF`;3>e;zW2
+R8
+32
+R21
+R22
+R23
+R12
+R13
+!i10b 1
