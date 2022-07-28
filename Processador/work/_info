@@ -1,0 +1,126 @@
+m255
+K3
+13
+cModel Technology
+dD:\Users\lsdeo\Documents\Ararangua\Eng. Comp\LDH\Cafeteira_Repo\ConversorD7
+Ecronometro
+Z0 w1659017962
+Z1 DPx4 ieee 16 std_logic_signed 0 22 E>OLoMaBGQ?hbGgOoNXM^1
+Z2 DPx4 ieee 15 std_logic_arith 0 22 4`Y?g_lkdn;7UL9IiJck01
+Z3 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z4 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z5 dD:\Users\lsdeo\Documents\Ararangua\Eng. Comp\LDH\Cafeteira_Repo\Processador
+Z6 8D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cronometro/Cronometro.vhd
+Z7 FD:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cronometro/Cronometro.vhd
+l0
+L6
+VhS@dXjUjk8@z:JB_<EI0T3
+Z8 OV;C;10.1d;51
+32
+Z9 !s108 1659032121.492000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cronometro/Cronometro.vhd|
+Z11 !s107 D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cronometro/Cronometro.vhd|
+Z12 o-work work -2002 -explicit -O0
+Z13 tExplicit 1
+!s100 X@oTf_PPN[d`d1WcRhh3Y3
+!i10b 1
+Abehavioral
+R1
+R2
+R3
+R4
+DEx4 work 10 cronometro 0 22 hS@dXjUjk8@z:JB_<EI0T3
+l20
+L16
+VZ00HV[[kCY[Fennj@CL6>1
+R8
+32
+R9
+R10
+R11
+R12
+R13
+!s100 mkg5BS<9S3E7WlzU]b^oY2
+!i10b 1
+Eprocessador
+Z14 w1659043407
+Z15 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
+R2
+Z16 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
+R3
+R4
+R5
+Z17 8D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/Processador.vhd
+Z18 FD:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/Processador.vhd
+l0
+L6
+V[I[07S=dNJ;8;YbzC>NK]3
+!s100 _;Kg1a<a03oA5PP>G_39@0
+R8
+32
+!i10b 1
+Z19 !s108 1659043414.483000
+Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/Processador.vhd|
+Z21 !s107 D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/Processador.vhd|
+R12
+R13
+Abehavioral
+R15
+R2
+R16
+R3
+R4
+Z22 DEx4 work 11 processador 0 22 [I[07S=dNJ;8;YbzC>NK]3
+l42
+L28
+VGoS5;JVNz<<A6b_<:KKHb3
+!s100 N0aGf:Q@`5]E5^4g=LcXI1
+R8
+32
+!i10b 1
+R19
+R20
+R21
+R12
+R13
+Etb_processador
+Z23 w1659042234
+R15
+R16
+R2
+R3
+R4
+R5
+Z24 8D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/TB_Processador.vhd
+Z25 FD:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/TB_Processador.vhd
+l0
+L7
+VVAa]YgDOSN[;Zgo15]^l`0
+R8
+32
+Z26 !s108 1659043413.901000
+Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/TB_Processador.vhd|
+Z28 !s107 D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/TB_Processador.vhd|
+R12
+R13
+!s100 O@A;h;oP15JINhX]`EKZC0
+!i10b 1
+Atest_bench
+R15
+R16
+R2
+R3
+R4
+DEx4 work 14 tb_processador 0 22 VAa]YgDOSN[;Zgo15]^l`0
+l51
+L10
+VW8m60=VFJURE?0oWOi`jd0
+!s100 N]L8n?N10JFi2NU@lS^Dg3
+R8
+32
+R26
+R27
+R28
+R12
+R13
+!i10b 1

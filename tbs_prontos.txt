@@ -1,0 +1,5 @@
+TB_Cronometro   -> check
+TB_Processador  -> not check
+TB_ConversorD7  -> check
+TB_Cafeteira    -> not check
+TB_PLL          -> never

@@ -1,0 +1,25 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "o_l_agua",
+					"strict" : false
+				},
+				{
+					"name" : "o_l_temp",
+					"strict" : false
+				},
+				{
+					"name" : "i_s_agua",
+					"strict" : false
+				},
+				{
+					"name" : "i_s_temp",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

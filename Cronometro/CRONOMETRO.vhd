@@ -1,95 +1,35 @@
-library IEEE;
-use IEEE.std_LOGIC_1164.ALL;
-use IEEE.std_LOGIC_ARITH.ALL;
-use IEEE.std_LOGIC_SIGNED.ALL;
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.std_logic_arith.all;
+use ieee.std_logic_signed.all;
 
-
-
-entity CRONOMETRO is
-	 Generic(
-				N				: integer := 28
-	);
-    Port ( i_CLK 			: in  std_LOGIC;
-           i_RST 			: in  std_LOGIC;
-			  i_START		: in  std_LOGIC;
-			  i_STOP 		: in  std_LOGIC;
-			  i_CLEAR   	: in  std_LOGIC;
-			  o_CONTADOR	: out std_LOGIC_vector(N-1 downto 0)
+entity Cronometro is
+    Port(
+		i_clk 			: in  std_logic;
+		i_rst 			: in  std_logic;
+		i_start			: in  std_logic;
+		i_clear   		: in  std_logic;
+		o_counter		: out std_logic_vector(27 downto 0)
 	 );
-end CRONOMETRO;
+end Cronometro;
 
-architecture Behavioral of CRONOMETRO is
-----------------------------------------------------------------------------------
--- Internal signals.
-----------------------------------------------------------------------------------
- type Estado is (st_IDLE, st_CONTAR, st_PARAR); 
-
-	attribute syn_encoding : string;
-	attribute syn_encoding of Estado : type is "safe";
-	
-    signal w_STATE 		: Estado;
-	signal w_CONTADOR		: std_LOGIC_vector(N-1 DOWNTO 0);
+architecture Behavioral of Cronometro is
+	signal w_counter	: std_LOGIC_vector(27 DOWNTO 0) := (others => '0');
 	
 	-- 0010 1111 1010 1111 0000 1000 0000
-	
 begin
-
-	o_CONTADOR <= w_CONTADOR;
+	o_counter <= w_counter;
 	
-----------------------------------------------------------------------------------
--- State machine.
-----------------------------------------------------------------------------------
-	process(i_CLK, i_RST)
+	process(i_clk, i_rst)
 	begin
-		if (i_RST = '1') then
-			w_CONTADOR <= (others => '0');
-			w_STATE <= st_IDLE;
-		
-		elsif rising_edge (i_CLK) then
-			case w_STATE is
-				when st_IDLE => 
-					if (i_START = '1') then
-						w_CONTADOR <= w_CONTADOR + 1;
-						w_STATE <= st_CONTAR;
-					else
-						w_STATE <= st_IDLE;
-					end if;
-				
-				
-				when st_CONTAR => 
-					w_CONTADOR <= w_CONTADOR + 1;
-					
-					if (i_STOP = '1') then
-						w_STATE <= st_PARAR;
-					elsif (i_CLEAR = '1') then
-						w_CONTADOR <= (others => '0');
-						w_STATE <= st_IDLE;
-					else
-						w_STATE <= st_CONTAR;
-					end if;
-							
-				
-				when st_PARAR => 
-					if (i_START = '1') then
-						w_CONTADOR <= w_CONTADOR + 1;
-						w_STATE <= st_CONTAR;
-					elsif(i_CLEAR = '1') then
-						w_CONTADOR <= (others => '0');
-						w_STATE <= st_IDLE;
-					else
-						w_STATE <= st_PARAR;
-					end if;
-				
-				
-				when others =>
-					null;
-					
-			end case;
+		if(i_rst = '1') then
+			w_counter <= (others => '0');
+		elsif(rising_edge (i_clk)) then
+			if(i_start = '1') then
+				w_counter <= w_counter + 1;
+			elsif(i_clear = '1') then
+				w_counter <= (others => '0');
+			end if;
 		end if;
-	
 	end process;
-	
-
-
 end Behavioral;
-

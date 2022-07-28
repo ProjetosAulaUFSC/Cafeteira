@@ -7,9 +7,9 @@ use ieee.numeric_std.all;
 entity TB_ConversorD7 is
 end TB_ConversorD7;
 
-architecture Behavioral of TB_ConversorD7 is
+architecture Test_Bench of TB_ConversorD7 is
 
-    component Display_7 is
+    component ConversorD7 is
         Port(
             i_clk       : in std_logic;
 		    i_rst		: in std_logic;
@@ -25,7 +25,7 @@ architecture Behavioral of TB_ConversorD7 is
     
 begin
 
-    UUT : Display_7
+    UUT : ConversorD7
         Port Map(
             i_clk       => w_clk,
             i_rst       => w_rst,
@@ -33,59 +33,40 @@ begin
             o_display   => w_display
         );
 
-        --
-        -- Clock
-        --
-        PROCESS
-        BEGIN
-            w_CLK <= '0';
-            WAIT FOR 10 NS;
-            w_CLK <= '1';
-            WAIT FOR 10 NS;
-        END PROCESS;
+        clock : process
+        begin
+            w_clk <= '0';
+            wait for 10 ns;
+            w_clk <= '1';
+            wait for 10 ns;
+        end process clock;
 
-        
-        --
-        -- Reset
-        --
-        process
+        reset : process
         begin
             w_rst <= '1';
             wait for 100 ns;
             w_rst <= '0';
             wait;
-        end process;
-        
-        --
-        -- Saídas
-        --
-        process
+        end process reset;
+
+        saidas : process
         begin
             wait for 110 ns;
             w_letra <= "000";
-            w_display <= "0111110";
             wait for 20 ns;
             w_letra <= "001";
-            w_display <= "1110111";
             wait for 20 ns;
             w_letra <= "010";
-            w_display <= "0000110";
             wait for 20 ns;
             w_letra <= "011";
-            w_display <= "0011111";
             wait for 20 ns;
             w_letra <= "100";
-            w_display <= "0111101";
             wait for 20 ns;
             w_letra <= "101";
-            w_display <= "0011101";
             wait for 20 ns;
             w_letra <= "110";
-            w_display <= "0010101";
             wait for 20 ns;
             w_letra <= "111";
-            w_display <= "1011111";
             wait;
-        end process;
-
-end Behavioral;
+        end process saidas;
+end Test_Bench;

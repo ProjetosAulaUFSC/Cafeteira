@@ -1,0 +1,45 @@
+|Processador
+i_rst => ~NO_FANOUT~
+i_clk => ~NO_FANOUT~
+i_state[0] => ~NO_FANOUT~
+i_state[1] => ~NO_FANOUT~
+i_opt[0] => ~NO_FANOUT~
+i_opt[1] => ~NO_FANOUT~
+i_tamanho => ~NO_FANOUT~
+i_acucar => ~NO_FANOUT~
+i_valor[0] => ~NO_FANOUT~
+i_valor[1] => ~NO_FANOUT~
+i_valor[2] => ~NO_FANOUT~
+i_valor[3] => ~NO_FANOUT~
+i_valor[4] => ~NO_FANOUT~
+i_valor[5] => ~NO_FANOUT~
+i_valor[6] => ~NO_FANOUT~
+i_valor[7] => ~NO_FANOUT~
+i_valor[8] => ~NO_FANOUT~
+i_valor[9] => ~NO_FANOUT~
+i_valor[10] => ~NO_FANOUT~
+i_valor[11] => ~NO_FANOUT~
+i_valor[12] => ~NO_FANOUT~
+i_valor[13] => ~NO_FANOUT~
+i_valor[14] => ~NO_FANOUT~
+i_valor[15] => ~NO_FANOUT~
+i_valor[16] => ~NO_FANOUT~
+i_valor[17] => ~NO_FANOUT~
+i_valor[18] => ~NO_FANOUT~
+i_valor[19] => ~NO_FANOUT~
+i_valor[20] => ~NO_FANOUT~
+i_valor[21] => ~NO_FANOUT~
+i_valor[22] => ~NO_FANOUT~
+i_valor[23] => ~NO_FANOUT~
+o_f_pronto << <GND>
+o_f_preparo << <GND>
+o_valv_leite << <GND>
+o_valv_cafe << <GND>
+o_valv_chocolate << <GND>
+o_valv_acucar << <GND>
+o_valv_agua << <GND>
+o_f_repo << comb.DB_MAX_OUTPUT_PORT_TYPE
+o_start << <GND>
+o_clear << <GND>
+
+

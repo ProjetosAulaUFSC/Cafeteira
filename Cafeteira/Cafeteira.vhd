@@ -41,6 +41,16 @@ entity Cafeteira is
 end Cafeteira;
 
 architecture Behavioral of Cafeteira is
+
+	component Cronometro
+		port(
+			i_clk 			: in  std_logic;
+			i_rst 			: in  std_logic;
+			i_start			: in  std_logic;
+			i_clear   		: in  std_logic;
+			o_counter		: out std_logic_vector(27 downto 0)
+		 );
+	end component;
 	
 	component ConversorD7
 		port(
@@ -59,6 +69,7 @@ architecture Behavioral of Cafeteira is
 			i_opt				: in std_logic_vector(1 downto 0);
 			i_tamanho			: in std_logic;
 			i_acucar			: in std_logic;
+			i_valor				: in std_logic_vector(27 downto 0);
 			o_f_pronto			: out std_logic;
 			o_f_preparo			: out std_logic;
 			o_valv_leite		: out std_logic;
@@ -66,7 +77,9 @@ architecture Behavioral of Cafeteira is
 			o_valv_chocolate	: out std_logic;
 			o_valv_acucar		: out std_logic;
 			o_valv_agua			: out std_logic;
-			o_f_repo			: out std_logic
+			o_f_repo			: out std_logic;
+			o_start				: out std_logic;
+			o_clear				: out std_logic
 		);
 	end component;
 
@@ -91,7 +104,9 @@ architecture Behavioral of Cafeteira is
 	signal w_letra_3		: std_logic_vector(2 downto 0);
 	signal w_f_repo			: std_logic;
 	signal w_f_pronto		: std_logic;
-	signal w_f_preparo		: std_logic;
+	signal w_counter		: std_logic_vector(27 downto 0);
+	signal w_start			: std_logic;
+	signal w_clear			: std_logic;
 
 begin
 	
@@ -146,17 +161,27 @@ begin
 			i_opt			=> w_opt,
 			i_tamanho		=> w_tamanho,
 			i_acucar		=> w_acucar,
+			i_valor			=> w_counter,
 			o_f_pronto		=> o_l_pronto,
-			o_f_preparo		=> w_f_preparo,
+			o_f_preparo		=> o_l_preparo,
 			o_valv_leite	=> o_v_leite,
 			o_valv_cafe		=> o_v_cafe,		
 			o_valv_chocolate=> o_v_chocolate,
 			o_valv_acucar	=> o_v_acucar,
 			o_valv_agua		=> o_v_agua,
-			o_f_repo		=> w_f_repo
+			o_f_repo		=> w_f_repo,
+			o_start			=> w_start,
+			o_clear			=> w_clear	
 		); 
-
-	o_l_preparo <= w_f_preparo;
+		
+	U07 : Cronometro
+		Port Map(
+			i_clk 			=> w_clk,
+			i_rst 			=> w_rst,
+			i_start			=> w_start,
+			i_clear   		=> w_clear,
+			o_counter		=> w_counter
+	);
 
 	main : process(i_b_rst, i_b_preparo, w_clk, i_b_reposicao, i_b_tamanho)
 	begin

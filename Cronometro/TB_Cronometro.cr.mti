@@ -1,0 +1,21 @@
+{D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cronometro/Cronometro.vhd} {1 {vcom -work work -2002 -explicit {D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cronometro/Cronometro.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_SIGNED
+-- Compiling entity CRONOMETRO
+-- Compiling architecture Behavioral of CRONOMETRO
+
+} {} {}} {D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cronometro/TB_Cronometro.vhd} {1 {vcom -work work -2002 -explicit {D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cronometro/TB_Cronometro.vhd}
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_SIGNED
+-- Compiling entity TB_CRONOMETRO
+-- Compiling architecture Behavioral of TB_CRONOMETRO
+
+} {} {}}
