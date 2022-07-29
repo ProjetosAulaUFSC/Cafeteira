@@ -36,6 +36,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "o_l_agua",
+					"strict" : false
+				},
+				{
+					"name" : "o_l_temp",
+					"strict" : false
+				},
+				{
 					"name" : "o_v_leite",
 					"strict" : false
 				},
@@ -145,14 +153,6 @@
 				},
 				{
 					"name" : "o_display_3[1]",
-					"strict" : false
-				},
-				{
-					"name" : "o_l_agua",
-					"strict" : false
-				},
-				{
-					"name" : "o_l_temp",
 					"strict" : false
 				},
 				{

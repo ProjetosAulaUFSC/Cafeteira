@@ -53,7 +53,6 @@ i_b_reposicao => w_letra_3[0].ENA
 i_b_reposicao => w_opt[1].ENA
 i_b_reposicao => w_opt[0].ENA
 i_s_reposicao => ~NO_FANOUT~
-i_b_rst => ConversorD7:U02.i_rst
 i_b_rst => w_opt[0].ACLR
 i_b_rst => w_opt[1].ACLR
 i_b_rst => w_state[0].IN1
@@ -75,10 +74,6 @@ i_b_rst => o_l_tamanho~reg0.ACLR
 i_b_rst => o_l_mocaccino~reg0.ACLR
 i_b_rst => o_l_cafe_leite~reg0.ACLR
 i_b_rst => o_l_cafe~reg0.ACLR
-i_b_rst => ConversorD7:U03.i_rst
-i_b_rst => ConversorD7:U04.i_rst
-i_b_rst => ConversorD7:U05.i_rst
-i_b_rst => Processador:U06.i_rst
 i_b_rst => PLL_INTEL:U01.areset
 i_b_rst => o_l_reposicao.IN1
 i_b_rst => w_state[1].IN1
@@ -95,6 +90,8 @@ o_l_acucar <= o_l_acucar~reg0.DB_MAX_OUTPUT_PORT_TYPE
 o_l_reposicao <= o_l_reposicao$latch.DB_MAX_OUTPUT_PORT_TYPE
 o_l_preparo <= Processador:U06.o_f_preparo
 o_l_pronto <= Processador:U06.o_f_pronto
+o_l_agua <= i_s_agua.DB_MAX_OUTPUT_PORT_TYPE
+o_l_temp <= i_s_temp.DB_MAX_OUTPUT_PORT_TYPE
 o_v_leite <= Processador:U06.o_valv_leite
 o_v_cafe <= Processador:U06.o_valv_cafe
 o_v_chocolate <= Processador:U06.o_valv_chocolate
@@ -128,8 +125,6 @@ o_display_3[3] <= ConversorD7:U05.o_display[3]
 o_display_3[2] <= ConversorD7:U05.o_display[4]
 o_display_3[1] <= ConversorD7:U05.o_display[5]
 o_display_3[0] <= ConversorD7:U05.o_display[6]
-o_l_agua <= i_s_agua.DB_MAX_OUTPUT_PORT_TYPE
-o_l_temp <= i_s_temp.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |Cafeteira|PLL_INTEL:U01
