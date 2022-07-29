@@ -82,39 +82,63 @@ begin
         process
         begin   
             w_rst <= '1';
-            wait for 90 ns;
+            wait for 50 ns;
             w_rst <= '0';
             wait;
         end process;
 
-        process
+        process  
         begin
-            wait for 110 ns;
+            -- Repo
+            wait for 70 ns;
             w_state <= "00";
+            wait for 20 ns;
+            w_state <= "10";
+            wait for 20 ns;
+            w_state <= "00";
+
+            -- Cafe pequeno com acucar
             wait for 20 ns;
             w_state <= "01";
             w_opt <= "01";
             w_acucar <= '1';
             w_tamanho <= '0';
             w_start <= '1';
-            w_clear <= '0';
             w_valor <= "000000000000000000100000";
             wait for 20 ns;
-            -- w_state <= "00";
             w_opt <= "00";
             w_acucar <= '0';
+            wait for 220 ns;
+            w_state <= "00";
+
+            -- Cafe com leite grande
+            wait for 20 ns;
+            w_state <= "01";
+            w_opt <= "10";
+            w_acucar <= '0';
+            w_tamanho <= '1';
+            w_start <= '1';
+            w_valor <= "000000000000000000000001";
+            wait for 20 ns;
+            w_opt <= "00";
+            w_tamanho <= '0';
+            wait for 220 ns;
+            w_state <= "00";
+
+            -- Mocaccino
+            wait for 20 ns;
+            w_state <= "01";
+            w_opt <= "11";
+            w_acucar <= '0';
+            w_tamanho <= '0';
+            w_start <= '1';
+            w_valor <= "000000000000000000010001";
+            wait for 20 ns;
+            w_opt <= "00";
+            w_tamanho <= '0';
+            wait for 220 ns;
+            w_state <= "00";
             wait;
         end process;
-
-        -- reposicao : process  -- PERGUNTAR PRO RALPH Dns
-        -- begin
-        --     wait for 110 ns;
-        --     w_state <= "00";
-        --     wait for 20 ns;
-        --     w_state <= "10";
-        --     wait for 50 ns;
-        --     w_state <= "00";
-        --     wait;
-        -- end process reposicao;
 
     end Test_Bench;

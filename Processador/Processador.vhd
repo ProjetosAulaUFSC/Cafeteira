@@ -35,7 +35,7 @@ architecture Behavioral of Processador is
 	signal w_n_leite	: integer := 20;
 	signal w_n_chocolate: integer := 20;
 	signal w_n_acucar	: integer := 20;
-	signal w_f_pisca	: std_logic_vector(4 downto 0) := (others => '0');
+	signal w_f_pisca	: integer := 0;
 	signal w_f_etapa	: std_logic_vector(2 downto 0) := (others => '0');
 	signal w_f_l_pronto : std_logic;
 
@@ -45,7 +45,6 @@ begin
 	preparo	: process(i_clk, i_state)
 	begin
 		if(rising_edge(i_clk)) then
-			--w_n_acucar <= w_n_acucar - 1;
 			if(w_f_sec = 1) then
 				w_f_sec <= 0;
 			end if;
@@ -71,42 +70,39 @@ begin
 					w_start <= '1';
 					w_f_etapa <= "001";
 				elsif(w_f_etapa = "001") then
-					if(w_q_sec>0) then --11") then
-						w_start <= '0';
+					if(w_q_sec>3) then
 						w_f_etapa <= "010";
-						w_f_sec <= 1;
 						o_valv_cafe <= '0';
 						o_valv_leite <= '0';
 						o_valv_chocolate <= '0';
 						o_valv_acucar <= '0';
 					end if;
 				elsif(w_f_etapa = "010") then
-					w_start <= '1';
-					w_f_etapa <= "011";
-				elsif(w_f_etapa = "011") then
-					if((i_tamanho = '0' and w_q_sec> 1)) then -- "001111") or (i_tamanho = '1' and w_q_sec>"100011")) then
+					if((i_tamanho = '0' and w_q_sec> 15) or (i_tamanho = '1' and w_q_sec>35)) then
 						w_start <= '0';
 						w_f_sec <= 1;
 						o_valv_agua <= '0';
 						o_f_preparo <= '0';
+						w_f_l_pronto <= '1';
 						w_f_etapa <= "100";	
 					end if;
-				elsif(w_f_pisca < "10101") then
+				elsif(w_f_pisca < 21) then
 					if(w_f_etapa = "100") then
-						o_f_pronto <= w_f_l_pronto;
 						w_start <= '1';
 						w_f_etapa <= "101";
+						o_f_pronto <= w_f_l_pronto;
+						w_f_l_pronto <= not w_f_l_pronto;
 					elsif(w_f_etapa = "101" and w_q_sec>0) then
 						w_start <= '0';
 						w_f_sec <= 1;
-						w_f_pisca <= std_logic_vector(to_unsigned(to_integer(unsigned(w_f_pisca)) + 1,5));
-						w_f_l_pronto <= not w_f_l_pronto;
+						w_f_pisca <= w_f_pisca + 1;
 						w_f_etapa <= "100";
 					end if;
-				elsif(w_f_pisca = "10101") then
-					w_f_pisca <= "00000";
+				elsif(w_f_pisca = 21) then
+					w_f_pisca <= 0;
 					w_f_etapa <= "000";
-				end if;
+					w_f_sec <= 1;
+					end if;
 			elsif(i_state = "10") then
 				o_f_repo <= '0';
 			end if;
@@ -116,7 +112,7 @@ begin
 	begin
 		if(w_start = '1' and rising_edge(i_clk)) then
 			if(w_clear = '0') then
-				if(i_valor>"000000000000000000000010") then -- 101111101011110000100000
+				if(i_valor>"101111101011110000100000") then
 					w_clear <= '1';
 					w_q_sec <= w_q_sec + 1;
 				end if;

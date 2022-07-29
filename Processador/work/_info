@@ -43,7 +43,7 @@ R13
 !s100 mkg5BS<9S3E7WlzU]b^oY2
 !i10b 1
 Eprocessador
-Z14 w1659043407
+Z14 w1659082487
 Z15 DPx4 ieee 11 numeric_std 0 22 O3PF8EB`?j9=z7KT`fn941
 R2
 Z16 DPx4 ieee 18 std_logic_unsigned 0 22 RYmj;=TK`k=k>D@Cz`zoB3
@@ -59,7 +59,7 @@ V[I[07S=dNJ;8;YbzC>NK]3
 R8
 32
 !i10b 1
-Z19 !s108 1659043414.483000
+Z19 !s108 1659082805.689000
 Z20 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/Processador.vhd|
 Z21 !s107 D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/Processador.vhd|
 R12
@@ -73,8 +73,8 @@ R4
 Z22 DEx4 work 11 processador 0 22 [I[07S=dNJ;8;YbzC>NK]3
 l42
 L28
-VGoS5;JVNz<<A6b_<:KKHb3
-!s100 N0aGf:Q@`5]E5^4g=LcXI1
+Z23 V3HKJ6Vz9]@H@]AGE[CBoZ1
+Z24 !s100 [DJclGjWZaV^XHkzX4i=F2
 R8
 32
 !i10b 1
@@ -84,23 +84,23 @@ R21
 R12
 R13
 Etb_processador
-Z23 w1659042234
+Z25 w1659082800
 R15
 R16
 R2
 R3
 R4
 R5
-Z24 8D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/TB_Processador.vhd
-Z25 FD:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/TB_Processador.vhd
+Z26 8D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/TB_Processador.vhd
+Z27 FD:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/TB_Processador.vhd
 l0
 L7
 VVAa]YgDOSN[;Zgo15]^l`0
 R8
 32
-Z26 !s108 1659043413.901000
-Z27 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/TB_Processador.vhd|
-Z28 !s107 D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/TB_Processador.vhd|
+Z28 !s108 1659082805.420000
+Z29 !s90 -reportprogress|300|-work|work|-2002|-explicit|D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/TB_Processador.vhd|
+Z30 !s107 D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/TB_Processador.vhd|
 R12
 R13
 !s100 O@A;h;oP15JINhX]`EKZC0
@@ -114,13 +114,13 @@ R4
 DEx4 work 14 tb_processador 0 22 VAa]YgDOSN[;Zgo15]^l`0
 l51
 L10
-VW8m60=VFJURE?0oWOi`jd0
-!s100 N]L8n?N10JFi2NU@lS^Dg3
+VB;zUgM5cjho1hX_7SDCT=1
 R8
 32
-R26
-R27
 R28
+R29
+R30
 R12
 R13
+!s100 ^^ildQ49enhC;2<BL:D?l1
 !i10b 1
