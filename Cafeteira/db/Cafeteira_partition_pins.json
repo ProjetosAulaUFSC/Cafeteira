@@ -4,6 +4,150 @@
 			"name" : "Top",
 			"pins" : [
 				{
+					"name" : "o_l_cafe",
+					"strict" : false
+				},
+				{
+					"name" : "o_l_cafe_leite",
+					"strict" : false
+				},
+				{
+					"name" : "o_l_mocaccino",
+					"strict" : false
+				},
+				{
+					"name" : "o_l_tamanho",
+					"strict" : false
+				},
+				{
+					"name" : "o_l_acucar",
+					"strict" : false
+				},
+				{
+					"name" : "o_l_reposicao",
+					"strict" : false
+				},
+				{
+					"name" : "o_l_preparo",
+					"strict" : false
+				},
+				{
+					"name" : "o_l_pronto",
+					"strict" : false
+				},
+				{
+					"name" : "o_v_leite",
+					"strict" : false
+				},
+				{
+					"name" : "o_v_cafe",
+					"strict" : false
+				},
+				{
+					"name" : "o_v_chocolate",
+					"strict" : false
+				},
+				{
+					"name" : "o_v_acucar",
+					"strict" : false
+				},
+				{
+					"name" : "o_v_agua",
+					"strict" : false
+				},
+				{
+					"name" : "o_display_0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "o_display_0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "o_display_0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "o_display_0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "o_display_0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "o_display_1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "o_display_1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "o_display_1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "o_display_1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "o_display_1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "o_display_1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "o_display_1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "o_display_2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "o_display_2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "o_display_2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "o_display_2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "o_display_2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "o_display_3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "o_display_3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "o_display_3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "o_display_3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "o_display_3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "o_display_3[1]",
+					"strict" : false
+				},
+				{
 					"name" : "o_l_agua",
 					"strict" : false
 				},
@@ -17,6 +161,38 @@
 				},
 				{
 					"name" : "i_s_temp",
+					"strict" : false
+				},
+				{
+					"name" : "i_b_cafe",
+					"strict" : false
+				},
+				{
+					"name" : "i_b_rst",
+					"strict" : false
+				},
+				{
+					"name" : "i_b_mocaccino",
+					"strict" : false
+				},
+				{
+					"name" : "i_b_cafe_leite",
+					"strict" : false
+				},
+				{
+					"name" : "i_b_reposicao",
+					"strict" : false
+				},
+				{
+					"name" : "i_b_tamanho",
+					"strict" : false
+				},
+				{
+					"name" : "i_b_acucar",
+					"strict" : false
+				},
+				{
+					"name" : "i_b_preparo",
 					"strict" : false
 				}
 			]

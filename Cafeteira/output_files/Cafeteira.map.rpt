@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Cafeteira
-Thu Jul 28 17:58:26 2022
+Fri Jul 29 05:40:12 2022
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -10,12 +10,20 @@ Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Port Connectivity Checks: "Processador:U06"
-  6. Port Connectivity Checks: "ConversorD7:U05"
-  7. Port Connectivity Checks: "ConversorD7:U04"
-  8. Port Connectivity Checks: "ConversorD7:U03"
-  9. Port Connectivity Checks: "ConversorD7:U02"
- 10. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: PLL_INTEL:U01|altpll:altpll_component
+ 15. altpll Parameter Settings by Entity Instance
+ 16. Post-Synthesis Netlist Statistics for Top Partition
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
 
 
 
@@ -42,22 +50,22 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Thu Jul 28 17:58:26 2022           ;
+; Analysis & Synthesis Status        ; Successful - Fri Jul 29 05:40:12 2022       ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; Cafeteira                                   ;
 ; Top-level Entity Name              ; Cafeteira                                   ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
-; UFM blocks                         ; N/A until Partition Merge                   ;
-; ADC blocks                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 427                                         ;
+;     Total combinational functions  ; 407                                         ;
+;     Dedicated logic registers      ; 266                                         ;
+; Total registers                    ; 266                                         ;
+; Total pins                         ; 55                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 1                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -156,60 +164,603 @@ https://fpgasoftware.intel.com/eula.
 ; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Processador:U06"                                                                                                      ;
-+------------+-------+------------------+----------------------------------------------------------------------------------------------------------+
-; Port       ; Type  ; Severity         ; Details                                                                                                  ;
-+------------+-------+------------------+----------------------------------------------------------------------------------------------------------+
-; i_state[0] ; Input ; Info             ; Stuck at GND                                                                                             ;
-; i_opt      ; Input ; Info             ; Stuck at GND                                                                                             ;
-; i_tamanho  ; Input ; Info             ; Stuck at GND                                                                                             ;
-; i_acucar   ; Input ; Info             ; Stuck at GND                                                                                             ;
-; i_valor    ; Input ; Critical Warning ; Can't connect array with 28 elements in array dimension 1 to port with 24 elements in the same dimension ;
-+------------+-------+------------------+----------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                        ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                    ; Library ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------+---------+
+; ../Cronometro/CRONOMETRO.vhd     ; yes             ; User VHDL File               ; D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cronometro/CRONOMETRO.vhd       ;         ;
+; ../PLL/PLL_INTEL.vhd             ; yes             ; User Wizard-Generated File   ; D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/PLL/PLL_INTEL.vhd               ;         ;
+; ../Processador/Processador.vhd   ; yes             ; User VHDL File               ; D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/Processador.vhd     ;         ;
+; ../ConversorD7/ConversorD7.vhd   ; yes             ; User VHDL File               ; D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/ConversorD7/ConversorD7.vhd     ;         ;
+; Cafeteira.vhd                    ; yes             ; User VHDL File               ; D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd         ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                 ; d:/quartus/quartus/libraries/megafunctions/altpll.tdf                                           ;         ;
+; aglobal211.inc                   ; yes             ; Megafunction                 ; d:/quartus/quartus/libraries/megafunctions/aglobal211.inc                                       ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                 ; d:/quartus/quartus/libraries/megafunctions/stratix_pll.inc                                      ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                 ; d:/quartus/quartus/libraries/megafunctions/stratixii_pll.inc                                    ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                 ; d:/quartus/quartus/libraries/megafunctions/cycloneii_pll.inc                                    ;         ;
+; db/pll_intel_altpll.v            ; yes             ; Auto-Generated Megafunction  ; D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/db/pll_intel_altpll.v ;         ;
++----------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------+
-; Port Connectivity Checks: "ConversorD7:U05" ;
-+---------+-------+----------+----------------+
-; Port    ; Type  ; Severity ; Details        ;
-+---------+-------+----------+----------------+
-; i_letra ; Input ; Info     ; Stuck at GND   ;
-+---------+-------+----------+----------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                                          ;
++---------------------------------------------+----------------------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                                  ;
++---------------------------------------------+----------------------------------------------------------------------------------------+
+; Estimated Total logic elements              ; 427                                                                                    ;
+;                                             ;                                                                                        ;
+; Total combinational functions               ; 407                                                                                    ;
+; Logic element usage by number of LUT inputs ;                                                                                        ;
+;     -- 4 input functions                    ; 133                                                                                    ;
+;     -- 3 input functions                    ; 28                                                                                     ;
+;     -- <=2 input functions                  ; 246                                                                                    ;
+;                                             ;                                                                                        ;
+; Logic elements by mode                      ;                                                                                        ;
+;     -- normal mode                          ; 199                                                                                    ;
+;     -- arithmetic mode                      ; 208                                                                                    ;
+;                                             ;                                                                                        ;
+; Total registers                             ; 266                                                                                    ;
+;     -- Dedicated logic registers            ; 266                                                                                    ;
+;     -- I/O registers                        ; 0                                                                                      ;
+;                                             ;                                                                                        ;
+; I/O pins                                    ; 55                                                                                     ;
+;                                             ;                                                                                        ;
+; Embedded Multiplier 9-bit elements          ; 0                                                                                      ;
+;                                             ;                                                                                        ;
+; Total PLLs                                  ; 1                                                                                      ;
+;     -- PLLs                                 ; 1                                                                                      ;
+;                                             ;                                                                                        ;
+; Maximum fan-out node                        ; PLL_INTEL:U01|altpll:altpll_component|PLL_INTEL_altpll:auto_generated|wire_pll1_clk[0] ;
+; Maximum fan-out                             ; 268                                                                                    ;
+; Total fan-out                               ; 2004                                                                                   ;
+; Average fan-out                             ; 2.56                                                                                   ;
++---------------------------------------------+----------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------+
-; Port Connectivity Checks: "ConversorD7:U04" ;
-+---------+-------+----------+----------------+
-; Port    ; Type  ; Severity ; Details        ;
-+---------+-------+----------+----------------+
-; i_letra ; Input ; Info     ; Stuck at GND   ;
-+---------+-------+----------+----------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                  ;
++--------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------+------------------+--------------+
+; Compilation Hierarchy Node                 ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                              ; Entity Name      ; Library Name ;
++--------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------+------------------+--------------+
+; |Cafeteira                                 ; 407 (19)            ; 266 (12)                  ; 0           ; 0          ; 0            ; 0       ; 0         ; 55   ; 0            ; 0          ; |Cafeteira                                                                       ; Cafeteira        ; work         ;
+;    |ConversorD7:U02|                       ; 0 (0)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Cafeteira|ConversorD7:U02                                                       ; ConversorD7      ; work         ;
+;    |ConversorD7:U03|                       ; 1 (1)               ; 7 (7)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Cafeteira|ConversorD7:U03                                                       ; ConversorD7      ; work         ;
+;    |ConversorD7:U04|                       ; 3 (3)               ; 5 (5)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Cafeteira|ConversorD7:U04                                                       ; ConversorD7      ; work         ;
+;    |ConversorD7:U05|                       ; 1 (1)               ; 6 (6)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Cafeteira|ConversorD7:U05                                                       ; ConversorD7      ; work         ;
+;    |Cronometro:U07|                        ; 25 (25)             ; 24 (24)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Cafeteira|Cronometro:U07                                                        ; Cronometro       ; work         ;
+;    |PLL_INTEL:U01|                         ; 1 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Cafeteira|PLL_INTEL:U01                                                         ; PLL_INTEL        ; work         ;
+;       |altpll:altpll_component|            ; 1 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Cafeteira|PLL_INTEL:U01|altpll:altpll_component                                 ; altpll           ; work         ;
+;          |PLL_INTEL_altpll:auto_generated| ; 1 (1)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Cafeteira|PLL_INTEL:U01|altpll:altpll_component|PLL_INTEL_altpll:auto_generated ; PLL_INTEL_altpll ; work         ;
+;    |Processador:U06|                       ; 357 (357)           ; 206 (206)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |Cafeteira|Processador:U06                                                       ; Processador      ; work         ;
++--------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+----------------------------------------------------------------------------------+------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+---------------------------------------------+
-; Port Connectivity Checks: "ConversorD7:U03" ;
-+---------+-------+----------+----------------+
-; Port    ; Type  ; Severity ; Details        ;
-+---------+-------+----------+----------------+
-; i_letra ; Input ; Info     ; Stuck at GND   ;
-+---------+-------+----------+----------------+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; o_l_reposicao$latch                                ; o_l_reposicao       ; yes                    ;
+; Number of user-specified and inferred latches = 1  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+---------------------------------------------+
-; Port Connectivity Checks: "ConversorD7:U02" ;
-+---------+-------+----------+----------------+
-; Port    ; Type  ; Severity ; Details        ;
-+---------+-------+----------+----------------+
-; i_letra ; Input ; Info     ; Stuck at GND   ;
-+---------+-------+----------+----------------+
++----------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                               ;
++----------------------------------------+-----------------------------------------+
+; Register name                          ; Reason for Removal                      ;
++----------------------------------------+-----------------------------------------+
+; Processador:U06|w_f_sec[2..31]         ; Merged with Processador:U06|w_f_sec[1]  ;
+; Processador:U06|o_valv_agua            ; Merged with Processador:U06|o_f_preparo ;
+; w_letra_0[1,2]                         ; Merged with w_letra_0[0]                ;
+; w_letra_1[1,2]                         ; Merged with w_letra_0[0]                ;
+; w_letra_2[0,2]                         ; Merged with w_letra_0[0]                ;
+; w_letra_3[2]                           ; Merged with w_letra_0[0]                ;
+; w_letra_2[1]                           ; Merged with w_letra_1[0]                ;
+; w_letra_3[0,1]                         ; Merged with w_letra_1[0]                ;
+; Processador:U06|w_f_sec[1]             ; Stuck at GND due to stuck port data_in  ;
+; w_letra_0[0]                           ; Stuck at GND due to stuck port data_in  ;
+; ConversorD7:U02|o_display[0,6]         ; Stuck at GND due to stuck port data_in  ;
+; ConversorD7:U04|o_display[0,6]         ; Stuck at GND due to stuck port data_in  ;
+; ConversorD7:U05|o_display[6]           ; Stuck at GND due to stuck port data_in  ;
+; Total Number of Removed Registers = 48 ;                                         ;
++----------------------------------------+-----------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                             ;
++---------------+---------------------------+-------------------------------------------------------------+
+; Register name ; Reason for Removal        ; Registers Removed due to This Register                      ;
++---------------+---------------------------+-------------------------------------------------------------+
+; w_letra_0[0]  ; Stuck at GND              ; ConversorD7:U02|o_display[0], ConversorD7:U02|o_display[6], ;
+;               ; due to stuck port data_in ; ConversorD7:U04|o_display[0]                                ;
++---------------+---------------------------+-------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 266   ;
+; Number of registers using Synchronous Clear  ; 24    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 90    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 192   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; Processador:U06|w_n_cafe[2]            ; 2       ;
+; Processador:U06|w_n_cafe[4]            ; 2       ;
+; Processador:U06|w_n_chocolate[2]       ; 2       ;
+; Processador:U06|w_n_chocolate[4]       ; 2       ;
+; Processador:U06|w_n_acucar[2]          ; 2       ;
+; Processador:U06|w_n_acucar[4]          ; 2       ;
+; Processador:U06|w_n_leite[2]           ; 2       ;
+; Processador:U06|w_n_leite[4]           ; 2       ;
+; Total number of inverted registers = 8 ;         ;
++----------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+; 3:1                ; 2 bits    ; 4 LEs         ; 0 LEs                ; 4 LEs                  ; Yes        ; |Cafeteira|o_l_tamanho~reg0             ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 0 LEs                ; 4 LEs                  ; Yes        ; |Cafeteira|o_l_acucar~reg0              ;
+; 3:1                ; 24 bits   ; 48 LEs        ; 24 LEs               ; 24 LEs                 ; Yes        ; |Cafeteira|Cronometro:U07|w_counter[3]  ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |Cafeteira|Processador:U06|w_f_pisca[7] ;
+; 6:1                ; 5 bits    ; 20 LEs        ; 10 LEs               ; 10 LEs                 ; Yes        ; |Cafeteira|o_l_cafe~reg0                ;
+; 10:1               ; 3 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |Cafeteira|Processador:U06|w_f_etapa[1] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: PLL_INTEL:U01|altpll:altpll_component ;
++-------------------------------+-----------------------------+----------------------+
+; Parameter Name                ; Value                       ; Type                 ;
++-------------------------------+-----------------------------+----------------------+
+; OPERATION_MODE                ; NORMAL                      ; Untyped              ;
+; PLL_TYPE                      ; AUTO                        ; Untyped              ;
+; LPM_HINT                      ; CBX_MODULE_PREFIX=PLL_INTEL ; Untyped              ;
+; QUALIFY_CONF_DONE             ; OFF                         ; Untyped              ;
+; COMPENSATE_CLOCK              ; CLK0                        ; Untyped              ;
+; SCAN_CHAIN                    ; LONG                        ; Untyped              ;
+; PRIMARY_CLOCK                 ; INCLK0                      ; Untyped              ;
+; INCLK0_INPUT_FREQUENCY        ; 20000                       ; Signed Integer       ;
+; INCLK1_INPUT_FREQUENCY        ; 0                           ; Untyped              ;
+; GATE_LOCK_SIGNAL              ; NO                          ; Untyped              ;
+; GATE_LOCK_COUNTER             ; 0                           ; Untyped              ;
+; LOCK_HIGH                     ; 1                           ; Untyped              ;
+; LOCK_LOW                      ; 1                           ; Untyped              ;
+; VALID_LOCK_MULTIPLIER         ; 1                           ; Untyped              ;
+; INVALID_LOCK_MULTIPLIER       ; 5                           ; Untyped              ;
+; SWITCH_OVER_ON_LOSSCLK        ; OFF                         ; Untyped              ;
+; SWITCH_OVER_ON_GATED_LOCK     ; OFF                         ; Untyped              ;
+; ENABLE_SWITCH_OVER_COUNTER    ; OFF                         ; Untyped              ;
+; SKIP_VCO                      ; OFF                         ; Untyped              ;
+; SWITCH_OVER_COUNTER           ; 0                           ; Untyped              ;
+; SWITCH_OVER_TYPE              ; AUTO                        ; Untyped              ;
+; FEEDBACK_SOURCE               ; EXTCLK0                     ; Untyped              ;
+; BANDWIDTH                     ; 0                           ; Untyped              ;
+; BANDWIDTH_TYPE                ; AUTO                        ; Untyped              ;
+; SPREAD_FREQUENCY              ; 0                           ; Untyped              ;
+; DOWN_SPREAD                   ; 0                           ; Untyped              ;
+; SELF_RESET_ON_GATED_LOSS_LOCK ; OFF                         ; Untyped              ;
+; SELF_RESET_ON_LOSS_LOCK       ; OFF                         ; Untyped              ;
+; CLK9_MULTIPLY_BY              ; 0                           ; Untyped              ;
+; CLK8_MULTIPLY_BY              ; 0                           ; Untyped              ;
+; CLK7_MULTIPLY_BY              ; 0                           ; Untyped              ;
+; CLK6_MULTIPLY_BY              ; 0                           ; Untyped              ;
+; CLK5_MULTIPLY_BY              ; 1                           ; Untyped              ;
+; CLK4_MULTIPLY_BY              ; 1                           ; Untyped              ;
+; CLK3_MULTIPLY_BY              ; 1                           ; Untyped              ;
+; CLK2_MULTIPLY_BY              ; 1                           ; Untyped              ;
+; CLK1_MULTIPLY_BY              ; 1                           ; Untyped              ;
+; CLK0_MULTIPLY_BY              ; 3                           ; Signed Integer       ;
+; CLK9_DIVIDE_BY                ; 0                           ; Untyped              ;
+; CLK8_DIVIDE_BY                ; 0                           ; Untyped              ;
+; CLK7_DIVIDE_BY                ; 0                           ; Untyped              ;
+; CLK6_DIVIDE_BY                ; 0                           ; Untyped              ;
+; CLK5_DIVIDE_BY                ; 1                           ; Untyped              ;
+; CLK4_DIVIDE_BY                ; 1                           ; Untyped              ;
+; CLK3_DIVIDE_BY                ; 1                           ; Untyped              ;
+; CLK2_DIVIDE_BY                ; 1                           ; Untyped              ;
+; CLK1_DIVIDE_BY                ; 1                           ; Untyped              ;
+; CLK0_DIVIDE_BY                ; 2                           ; Signed Integer       ;
+; CLK9_PHASE_SHIFT              ; 0                           ; Untyped              ;
+; CLK8_PHASE_SHIFT              ; 0                           ; Untyped              ;
+; CLK7_PHASE_SHIFT              ; 0                           ; Untyped              ;
+; CLK6_PHASE_SHIFT              ; 0                           ; Untyped              ;
+; CLK5_PHASE_SHIFT              ; 0                           ; Untyped              ;
+; CLK4_PHASE_SHIFT              ; 0                           ; Untyped              ;
+; CLK3_PHASE_SHIFT              ; 0                           ; Untyped              ;
+; CLK2_PHASE_SHIFT              ; 0                           ; Untyped              ;
+; CLK1_PHASE_SHIFT              ; 0                           ; Untyped              ;
+; CLK0_PHASE_SHIFT              ; 0                           ; Untyped              ;
+; CLK5_TIME_DELAY               ; 0                           ; Untyped              ;
+; CLK4_TIME_DELAY               ; 0                           ; Untyped              ;
+; CLK3_TIME_DELAY               ; 0                           ; Untyped              ;
+; CLK2_TIME_DELAY               ; 0                           ; Untyped              ;
+; CLK1_TIME_DELAY               ; 0                           ; Untyped              ;
+; CLK0_TIME_DELAY               ; 0                           ; Untyped              ;
+; CLK9_DUTY_CYCLE               ; 50                          ; Untyped              ;
+; CLK8_DUTY_CYCLE               ; 50                          ; Untyped              ;
+; CLK7_DUTY_CYCLE               ; 50                          ; Untyped              ;
+; CLK6_DUTY_CYCLE               ; 50                          ; Untyped              ;
+; CLK5_DUTY_CYCLE               ; 50                          ; Untyped              ;
+; CLK4_DUTY_CYCLE               ; 50                          ; Untyped              ;
+; CLK3_DUTY_CYCLE               ; 50                          ; Untyped              ;
+; CLK2_DUTY_CYCLE               ; 50                          ; Untyped              ;
+; CLK1_DUTY_CYCLE               ; 50                          ; Untyped              ;
+; CLK0_DUTY_CYCLE               ; 50                          ; Signed Integer       ;
+; CLK9_USE_EVEN_COUNTER_MODE    ; OFF                         ; Untyped              ;
+; CLK8_USE_EVEN_COUNTER_MODE    ; OFF                         ; Untyped              ;
+; CLK7_USE_EVEN_COUNTER_MODE    ; OFF                         ; Untyped              ;
+; CLK6_USE_EVEN_COUNTER_MODE    ; OFF                         ; Untyped              ;
+; CLK5_USE_EVEN_COUNTER_MODE    ; OFF                         ; Untyped              ;
+; CLK4_USE_EVEN_COUNTER_MODE    ; OFF                         ; Untyped              ;
+; CLK3_USE_EVEN_COUNTER_MODE    ; OFF                         ; Untyped              ;
+; CLK2_USE_EVEN_COUNTER_MODE    ; OFF                         ; Untyped              ;
+; CLK1_USE_EVEN_COUNTER_MODE    ; OFF                         ; Untyped              ;
+; CLK0_USE_EVEN_COUNTER_MODE    ; OFF                         ; Untyped              ;
+; CLK9_USE_EVEN_COUNTER_VALUE   ; OFF                         ; Untyped              ;
+; CLK8_USE_EVEN_COUNTER_VALUE   ; OFF                         ; Untyped              ;
+; CLK7_USE_EVEN_COUNTER_VALUE   ; OFF                         ; Untyped              ;
+; CLK6_USE_EVEN_COUNTER_VALUE   ; OFF                         ; Untyped              ;
+; CLK5_USE_EVEN_COUNTER_VALUE   ; OFF                         ; Untyped              ;
+; CLK4_USE_EVEN_COUNTER_VALUE   ; OFF                         ; Untyped              ;
+; CLK3_USE_EVEN_COUNTER_VALUE   ; OFF                         ; Untyped              ;
+; CLK2_USE_EVEN_COUNTER_VALUE   ; OFF                         ; Untyped              ;
+; CLK1_USE_EVEN_COUNTER_VALUE   ; OFF                         ; Untyped              ;
+; CLK0_USE_EVEN_COUNTER_VALUE   ; OFF                         ; Untyped              ;
+; LOCK_WINDOW_UI                ;  0.05                       ; Untyped              ;
+; LOCK_WINDOW_UI_BITS           ; UNUSED                      ; Untyped              ;
+; VCO_RANGE_DETECTOR_LOW_BITS   ; UNUSED                      ; Untyped              ;
+; VCO_RANGE_DETECTOR_HIGH_BITS  ; UNUSED                      ; Untyped              ;
+; DPA_MULTIPLY_BY               ; 0                           ; Untyped              ;
+; DPA_DIVIDE_BY                 ; 1                           ; Untyped              ;
+; DPA_DIVIDER                   ; 0                           ; Untyped              ;
+; EXTCLK3_MULTIPLY_BY           ; 1                           ; Untyped              ;
+; EXTCLK2_MULTIPLY_BY           ; 1                           ; Untyped              ;
+; EXTCLK1_MULTIPLY_BY           ; 1                           ; Untyped              ;
+; EXTCLK0_MULTIPLY_BY           ; 1                           ; Untyped              ;
+; EXTCLK3_DIVIDE_BY             ; 1                           ; Untyped              ;
+; EXTCLK2_DIVIDE_BY             ; 1                           ; Untyped              ;
+; EXTCLK1_DIVIDE_BY             ; 1                           ; Untyped              ;
+; EXTCLK0_DIVIDE_BY             ; 1                           ; Untyped              ;
+; EXTCLK3_PHASE_SHIFT           ; 0                           ; Untyped              ;
+; EXTCLK2_PHASE_SHIFT           ; 0                           ; Untyped              ;
+; EXTCLK1_PHASE_SHIFT           ; 0                           ; Untyped              ;
+; EXTCLK0_PHASE_SHIFT           ; 0                           ; Untyped              ;
+; EXTCLK3_TIME_DELAY            ; 0                           ; Untyped              ;
+; EXTCLK2_TIME_DELAY            ; 0                           ; Untyped              ;
+; EXTCLK1_TIME_DELAY            ; 0                           ; Untyped              ;
+; EXTCLK0_TIME_DELAY            ; 0                           ; Untyped              ;
+; EXTCLK3_DUTY_CYCLE            ; 50                          ; Untyped              ;
+; EXTCLK2_DUTY_CYCLE            ; 50                          ; Untyped              ;
+; EXTCLK1_DUTY_CYCLE            ; 50                          ; Untyped              ;
+; EXTCLK0_DUTY_CYCLE            ; 50                          ; Untyped              ;
+; VCO_MULTIPLY_BY               ; 0                           ; Untyped              ;
+; VCO_DIVIDE_BY                 ; 0                           ; Untyped              ;
+; SCLKOUT0_PHASE_SHIFT          ; 0                           ; Untyped              ;
+; SCLKOUT1_PHASE_SHIFT          ; 0                           ; Untyped              ;
+; VCO_MIN                       ; 0                           ; Untyped              ;
+; VCO_MAX                       ; 0                           ; Untyped              ;
+; VCO_CENTER                    ; 0                           ; Untyped              ;
+; PFD_MIN                       ; 0                           ; Untyped              ;
+; PFD_MAX                       ; 0                           ; Untyped              ;
+; M_INITIAL                     ; 0                           ; Untyped              ;
+; M                             ; 0                           ; Untyped              ;
+; N                             ; 1                           ; Untyped              ;
+; M2                            ; 1                           ; Untyped              ;
+; N2                            ; 1                           ; Untyped              ;
+; SS                            ; 1                           ; Untyped              ;
+; C0_HIGH                       ; 0                           ; Untyped              ;
+; C1_HIGH                       ; 0                           ; Untyped              ;
+; C2_HIGH                       ; 0                           ; Untyped              ;
+; C3_HIGH                       ; 0                           ; Untyped              ;
+; C4_HIGH                       ; 0                           ; Untyped              ;
+; C5_HIGH                       ; 0                           ; Untyped              ;
+; C6_HIGH                       ; 0                           ; Untyped              ;
+; C7_HIGH                       ; 0                           ; Untyped              ;
+; C8_HIGH                       ; 0                           ; Untyped              ;
+; C9_HIGH                       ; 0                           ; Untyped              ;
+; C0_LOW                        ; 0                           ; Untyped              ;
+; C1_LOW                        ; 0                           ; Untyped              ;
+; C2_LOW                        ; 0                           ; Untyped              ;
+; C3_LOW                        ; 0                           ; Untyped              ;
+; C4_LOW                        ; 0                           ; Untyped              ;
+; C5_LOW                        ; 0                           ; Untyped              ;
+; C6_LOW                        ; 0                           ; Untyped              ;
+; C7_LOW                        ; 0                           ; Untyped              ;
+; C8_LOW                        ; 0                           ; Untyped              ;
+; C9_LOW                        ; 0                           ; Untyped              ;
+; C0_INITIAL                    ; 0                           ; Untyped              ;
+; C1_INITIAL                    ; 0                           ; Untyped              ;
+; C2_INITIAL                    ; 0                           ; Untyped              ;
+; C3_INITIAL                    ; 0                           ; Untyped              ;
+; C4_INITIAL                    ; 0                           ; Untyped              ;
+; C5_INITIAL                    ; 0                           ; Untyped              ;
+; C6_INITIAL                    ; 0                           ; Untyped              ;
+; C7_INITIAL                    ; 0                           ; Untyped              ;
+; C8_INITIAL                    ; 0                           ; Untyped              ;
+; C9_INITIAL                    ; 0                           ; Untyped              ;
+; C0_MODE                       ; BYPASS                      ; Untyped              ;
+; C1_MODE                       ; BYPASS                      ; Untyped              ;
+; C2_MODE                       ; BYPASS                      ; Untyped              ;
+; C3_MODE                       ; BYPASS                      ; Untyped              ;
+; C4_MODE                       ; BYPASS                      ; Untyped              ;
+; C5_MODE                       ; BYPASS                      ; Untyped              ;
+; C6_MODE                       ; BYPASS                      ; Untyped              ;
+; C7_MODE                       ; BYPASS                      ; Untyped              ;
+; C8_MODE                       ; BYPASS                      ; Untyped              ;
+; C9_MODE                       ; BYPASS                      ; Untyped              ;
+; C0_PH                         ; 0                           ; Untyped              ;
+; C1_PH                         ; 0                           ; Untyped              ;
+; C2_PH                         ; 0                           ; Untyped              ;
+; C3_PH                         ; 0                           ; Untyped              ;
+; C4_PH                         ; 0                           ; Untyped              ;
+; C5_PH                         ; 0                           ; Untyped              ;
+; C6_PH                         ; 0                           ; Untyped              ;
+; C7_PH                         ; 0                           ; Untyped              ;
+; C8_PH                         ; 0                           ; Untyped              ;
+; C9_PH                         ; 0                           ; Untyped              ;
+; L0_HIGH                       ; 1                           ; Untyped              ;
+; L1_HIGH                       ; 1                           ; Untyped              ;
+; G0_HIGH                       ; 1                           ; Untyped              ;
+; G1_HIGH                       ; 1                           ; Untyped              ;
+; G2_HIGH                       ; 1                           ; Untyped              ;
+; G3_HIGH                       ; 1                           ; Untyped              ;
+; E0_HIGH                       ; 1                           ; Untyped              ;
+; E1_HIGH                       ; 1                           ; Untyped              ;
+; E2_HIGH                       ; 1                           ; Untyped              ;
+; E3_HIGH                       ; 1                           ; Untyped              ;
+; L0_LOW                        ; 1                           ; Untyped              ;
+; L1_LOW                        ; 1                           ; Untyped              ;
+; G0_LOW                        ; 1                           ; Untyped              ;
+; G1_LOW                        ; 1                           ; Untyped              ;
+; G2_LOW                        ; 1                           ; Untyped              ;
+; G3_LOW                        ; 1                           ; Untyped              ;
+; E0_LOW                        ; 1                           ; Untyped              ;
+; E1_LOW                        ; 1                           ; Untyped              ;
+; E2_LOW                        ; 1                           ; Untyped              ;
+; E3_LOW                        ; 1                           ; Untyped              ;
+; L0_INITIAL                    ; 1                           ; Untyped              ;
+; L1_INITIAL                    ; 1                           ; Untyped              ;
+; G0_INITIAL                    ; 1                           ; Untyped              ;
+; G1_INITIAL                    ; 1                           ; Untyped              ;
+; G2_INITIAL                    ; 1                           ; Untyped              ;
+; G3_INITIAL                    ; 1                           ; Untyped              ;
+; E0_INITIAL                    ; 1                           ; Untyped              ;
+; E1_INITIAL                    ; 1                           ; Untyped              ;
+; E2_INITIAL                    ; 1                           ; Untyped              ;
+; E3_INITIAL                    ; 1                           ; Untyped              ;
+; L0_MODE                       ; BYPASS                      ; Untyped              ;
+; L1_MODE                       ; BYPASS                      ; Untyped              ;
+; G0_MODE                       ; BYPASS                      ; Untyped              ;
+; G1_MODE                       ; BYPASS                      ; Untyped              ;
+; G2_MODE                       ; BYPASS                      ; Untyped              ;
+; G3_MODE                       ; BYPASS                      ; Untyped              ;
+; E0_MODE                       ; BYPASS                      ; Untyped              ;
+; E1_MODE                       ; BYPASS                      ; Untyped              ;
+; E2_MODE                       ; BYPASS                      ; Untyped              ;
+; E3_MODE                       ; BYPASS                      ; Untyped              ;
+; L0_PH                         ; 0                           ; Untyped              ;
+; L1_PH                         ; 0                           ; Untyped              ;
+; G0_PH                         ; 0                           ; Untyped              ;
+; G1_PH                         ; 0                           ; Untyped              ;
+; G2_PH                         ; 0                           ; Untyped              ;
+; G3_PH                         ; 0                           ; Untyped              ;
+; E0_PH                         ; 0                           ; Untyped              ;
+; E1_PH                         ; 0                           ; Untyped              ;
+; E2_PH                         ; 0                           ; Untyped              ;
+; E3_PH                         ; 0                           ; Untyped              ;
+; M_PH                          ; 0                           ; Untyped              ;
+; C1_USE_CASC_IN                ; OFF                         ; Untyped              ;
+; C2_USE_CASC_IN                ; OFF                         ; Untyped              ;
+; C3_USE_CASC_IN                ; OFF                         ; Untyped              ;
+; C4_USE_CASC_IN                ; OFF                         ; Untyped              ;
+; C5_USE_CASC_IN                ; OFF                         ; Untyped              ;
+; C6_USE_CASC_IN                ; OFF                         ; Untyped              ;
+; C7_USE_CASC_IN                ; OFF                         ; Untyped              ;
+; C8_USE_CASC_IN                ; OFF                         ; Untyped              ;
+; C9_USE_CASC_IN                ; OFF                         ; Untyped              ;
+; CLK0_COUNTER                  ; G0                          ; Untyped              ;
+; CLK1_COUNTER                  ; G0                          ; Untyped              ;
+; CLK2_COUNTER                  ; G0                          ; Untyped              ;
+; CLK3_COUNTER                  ; G0                          ; Untyped              ;
+; CLK4_COUNTER                  ; G0                          ; Untyped              ;
+; CLK5_COUNTER                  ; G0                          ; Untyped              ;
+; CLK6_COUNTER                  ; E0                          ; Untyped              ;
+; CLK7_COUNTER                  ; E1                          ; Untyped              ;
+; CLK8_COUNTER                  ; E2                          ; Untyped              ;
+; CLK9_COUNTER                  ; E3                          ; Untyped              ;
+; L0_TIME_DELAY                 ; 0                           ; Untyped              ;
+; L1_TIME_DELAY                 ; 0                           ; Untyped              ;
+; G0_TIME_DELAY                 ; 0                           ; Untyped              ;
+; G1_TIME_DELAY                 ; 0                           ; Untyped              ;
+; G2_TIME_DELAY                 ; 0                           ; Untyped              ;
+; G3_TIME_DELAY                 ; 0                           ; Untyped              ;
+; E0_TIME_DELAY                 ; 0                           ; Untyped              ;
+; E1_TIME_DELAY                 ; 0                           ; Untyped              ;
+; E2_TIME_DELAY                 ; 0                           ; Untyped              ;
+; E3_TIME_DELAY                 ; 0                           ; Untyped              ;
+; M_TIME_DELAY                  ; 0                           ; Untyped              ;
+; N_TIME_DELAY                  ; 0                           ; Untyped              ;
+; EXTCLK3_COUNTER               ; E3                          ; Untyped              ;
+; EXTCLK2_COUNTER               ; E2                          ; Untyped              ;
+; EXTCLK1_COUNTER               ; E1                          ; Untyped              ;
+; EXTCLK0_COUNTER               ; E0                          ; Untyped              ;
+; ENABLE0_COUNTER               ; L0                          ; Untyped              ;
+; ENABLE1_COUNTER               ; L0                          ; Untyped              ;
+; CHARGE_PUMP_CURRENT           ; 2                           ; Untyped              ;
+; LOOP_FILTER_R                 ;  1.000000                   ; Untyped              ;
+; LOOP_FILTER_C                 ; 5                           ; Untyped              ;
+; CHARGE_PUMP_CURRENT_BITS      ; 9999                        ; Untyped              ;
+; LOOP_FILTER_R_BITS            ; 9999                        ; Untyped              ;
+; LOOP_FILTER_C_BITS            ; 9999                        ; Untyped              ;
+; VCO_POST_SCALE                ; 0                           ; Untyped              ;
+; CLK2_OUTPUT_FREQUENCY         ; 0                           ; Untyped              ;
+; CLK1_OUTPUT_FREQUENCY         ; 0                           ; Untyped              ;
+; CLK0_OUTPUT_FREQUENCY         ; 0                           ; Untyped              ;
+; INTENDED_DEVICE_FAMILY        ; MAX 10                      ; Untyped              ;
+; PORT_CLKENA0                  ; PORT_UNUSED                 ; Untyped              ;
+; PORT_CLKENA1                  ; PORT_UNUSED                 ; Untyped              ;
+; PORT_CLKENA2                  ; PORT_UNUSED                 ; Untyped              ;
+; PORT_CLKENA3                  ; PORT_UNUSED                 ; Untyped              ;
+; PORT_CLKENA4                  ; PORT_UNUSED                 ; Untyped              ;
+; PORT_CLKENA5                  ; PORT_UNUSED                 ; Untyped              ;
+; PORT_EXTCLKENA0               ; PORT_CONNECTIVITY           ; Untyped              ;
+; PORT_EXTCLKENA1               ; PORT_CONNECTIVITY           ; Untyped              ;
+; PORT_EXTCLKENA2               ; PORT_CONNECTIVITY           ; Untyped              ;
+; PORT_EXTCLKENA3               ; PORT_CONNECTIVITY           ; Untyped              ;
+; PORT_EXTCLK0                  ; PORT_UNUSED                 ; Untyped              ;
+; PORT_EXTCLK1                  ; PORT_UNUSED                 ; Untyped              ;
+; PORT_EXTCLK2                  ; PORT_UNUSED                 ; Untyped              ;
+; PORT_EXTCLK3                  ; PORT_UNUSED                 ; Untyped              ;
+; PORT_CLKBAD0                  ; PORT_UNUSED                 ; Untyped              ;
+; PORT_CLKBAD1                  ; PORT_UNUSED                 ; Untyped              ;
+; PORT_CLK0                     ; PORT_USED                   ; Untyped              ;
+; PORT_CLK1                     ; PORT_UNUSED                 ; Untyped              ;
+; PORT_CLK2                     ; PORT_UNUSED                 ; Untyped              ;
+; PORT_CLK3                     ; PORT_UNUSED                 ; Untyped              ;
+; PORT_CLK4                     ; PORT_UNUSED                 ; Untyped              ;
+; PORT_CLK5                     ; PORT_UNUSED                 ; Untyped              ;
+; PORT_CLK6                     ; PORT_UNUSED                 ; Untyped              ;
+; PORT_CLK7                     ; PORT_UNUSED                 ; Untyped              ;
+; PORT_CLK8                     ; PORT_UNUSED                 ; Untyped              ;
+; PORT_CLK9                     ; PORT_UNUSED                 ; Untyped              ;
+; PORT_SCANDATA                 ; PORT_UNUSED                 ; Untyped              ;
+; PORT_SCANDATAOUT              ; PORT_UNUSED                 ; Untyped              ;
+; PORT_SCANDONE                 ; PORT_UNUSED                 ; Untyped              ;
+; PORT_SCLKOUT1                 ; PORT_CONNECTIVITY           ; Untyped              ;
+; PORT_SCLKOUT0                 ; PORT_CONNECTIVITY           ; Untyped              ;
+; PORT_ACTIVECLOCK              ; PORT_UNUSED                 ; Untyped              ;
+; PORT_CLKLOSS                  ; PORT_UNUSED                 ; Untyped              ;
+; PORT_INCLK1                   ; PORT_UNUSED                 ; Untyped              ;
+; PORT_INCLK0                   ; PORT_USED                   ; Untyped              ;
+; PORT_FBIN                     ; PORT_UNUSED                 ; Untyped              ;
+; PORT_PLLENA                   ; PORT_UNUSED                 ; Untyped              ;
+; PORT_CLKSWITCH                ; PORT_UNUSED                 ; Untyped              ;
+; PORT_ARESET                   ; PORT_USED                   ; Untyped              ;
+; PORT_PFDENA                   ; PORT_UNUSED                 ; Untyped              ;
+; PORT_SCANCLK                  ; PORT_UNUSED                 ; Untyped              ;
+; PORT_SCANACLR                 ; PORT_UNUSED                 ; Untyped              ;
+; PORT_SCANREAD                 ; PORT_UNUSED                 ; Untyped              ;
+; PORT_SCANWRITE                ; PORT_UNUSED                 ; Untyped              ;
+; PORT_ENABLE0                  ; PORT_CONNECTIVITY           ; Untyped              ;
+; PORT_ENABLE1                  ; PORT_CONNECTIVITY           ; Untyped              ;
+; PORT_LOCKED                   ; PORT_USED                   ; Untyped              ;
+; PORT_CONFIGUPDATE             ; PORT_UNUSED                 ; Untyped              ;
+; PORT_FBOUT                    ; PORT_CONNECTIVITY           ; Untyped              ;
+; PORT_PHASEDONE                ; PORT_UNUSED                 ; Untyped              ;
+; PORT_PHASESTEP                ; PORT_UNUSED                 ; Untyped              ;
+; PORT_PHASEUPDOWN              ; PORT_UNUSED                 ; Untyped              ;
+; PORT_SCANCLKENA               ; PORT_UNUSED                 ; Untyped              ;
+; PORT_PHASECOUNTERSELECT       ; PORT_UNUSED                 ; Untyped              ;
+; PORT_VCOOVERRANGE             ; PORT_CONNECTIVITY           ; Untyped              ;
+; PORT_VCOUNDERRANGE            ; PORT_CONNECTIVITY           ; Untyped              ;
+; M_TEST_SOURCE                 ; 5                           ; Untyped              ;
+; C0_TEST_SOURCE                ; 5                           ; Untyped              ;
+; C1_TEST_SOURCE                ; 5                           ; Untyped              ;
+; C2_TEST_SOURCE                ; 5                           ; Untyped              ;
+; C3_TEST_SOURCE                ; 5                           ; Untyped              ;
+; C4_TEST_SOURCE                ; 5                           ; Untyped              ;
+; C5_TEST_SOURCE                ; 5                           ; Untyped              ;
+; C6_TEST_SOURCE                ; 5                           ; Untyped              ;
+; C7_TEST_SOURCE                ; 5                           ; Untyped              ;
+; C8_TEST_SOURCE                ; 5                           ; Untyped              ;
+; C9_TEST_SOURCE                ; 5                           ; Untyped              ;
+; CBXI_PARAMETER                ; PLL_INTEL_altpll            ; Untyped              ;
+; VCO_FREQUENCY_CONTROL         ; AUTO                        ; Untyped              ;
+; VCO_PHASE_SHIFT_STEP          ; 0                           ; Untyped              ;
+; WIDTH_CLOCK                   ; 5                           ; Signed Integer       ;
+; WIDTH_PHASECOUNTERSELECT      ; 4                           ; Untyped              ;
+; USING_FBMIMICBIDIR_PORT       ; OFF                         ; Untyped              ;
+; DEVICE_FAMILY                 ; MAX 10                      ; Untyped              ;
+; SCAN_CHAIN_MIF_FILE           ; UNUSED                      ; Untyped              ;
+; SIM_GATE_LOCK_DEVICE_BEHAVIOR ; OFF                         ; Untyped              ;
+; AUTO_CARRY_CHAINS             ; ON                          ; AUTO_CARRY           ;
+; IGNORE_CARRY_BUFFERS          ; OFF                         ; IGNORE_CARRY         ;
+; AUTO_CASCADE_CHAINS           ; ON                          ; AUTO_CASCADE         ;
+; IGNORE_CASCADE_BUFFERS        ; OFF                         ; IGNORE_CASCADE       ;
++-------------------------------+-----------------------------+----------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; altpll Parameter Settings by Entity Instance                          ;
++-------------------------------+---------------------------------------+
+; Name                          ; Value                                 ;
++-------------------------------+---------------------------------------+
+; Number of entity instances    ; 1                                     ;
+; Entity Instance               ; PLL_INTEL:U01|altpll:altpll_component ;
+;     -- OPERATION_MODE         ; NORMAL                                ;
+;     -- PLL_TYPE               ; AUTO                                  ;
+;     -- PRIMARY_CLOCK          ; INCLK0                                ;
+;     -- INCLK0_INPUT_FREQUENCY ; 20000                                 ;
+;     -- INCLK1_INPUT_FREQUENCY ; 0                                     ;
+;     -- VCO_MULTIPLY_BY        ; 0                                     ;
+;     -- VCO_DIVIDE_BY          ; 0                                     ;
++-------------------------------+---------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 55                          ;
+; cycloneiii_ff         ; 266                         ;
+;     CLR               ; 30                          ;
+;     ENA               ; 132                         ;
+;     ENA CLR           ; 36                          ;
+;     ENA CLR SCLR      ; 24                          ;
+;     plain             ; 44                          ;
+; cycloneiii_lcell_comb ; 408                         ;
+;     arith             ; 208                         ;
+;         2 data inputs ; 207                         ;
+;         3 data inputs ; 1                           ;
+;     normal            ; 200                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 22                          ;
+;         2 data inputs ; 17                          ;
+;         3 data inputs ; 27                          ;
+;         4 data inputs ; 133                         ;
+; cycloneiii_pll        ; 1                           ;
+;                       ;                             ;
+; Max LUT depth         ; 8.00                        ;
+; Average LUT depth     ; 4.72                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:04     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -218,7 +769,7 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Thu Jul 28 17:58:08 2022
+    Info: Processing started: Fri Jul 29 05:39:45 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Cafeteira -c Cafeteira
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -231,75 +782,106 @@ Info (12021): Found 2 design units, including 1 entities, in source file /users/
 Info (12021): Found 2 design units, including 1 entities, in source file /users/lsdeo/documents/ararangua/eng. comp/ldh/cafeteira_repo/processador/processador.vhd
     Info (12022): Found design unit 1: Processador-Behavioral File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/Processador.vhd Line: 28
     Info (12023): Found entity 1: Processador File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/Processador.vhd Line: 6
-Info (12021): Found 2 design units, including 1 entities, in source file /users/lsdeo/documents/ararangua/eng. comp/ldh/cafeteira_repo/conversord7/tb_conversord7.vhd
-    Info (12022): Found design unit 1: TB_ConversorD7-Test_Bench File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/ConversorD7/TB_ConversorD7.vhd Line: 10
-    Info (12023): Found entity 1: TB_ConversorD7 File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/ConversorD7/TB_ConversorD7.vhd Line: 7
 Info (12021): Found 2 design units, including 1 entities, in source file /users/lsdeo/documents/ararangua/eng. comp/ldh/cafeteira_repo/conversord7/conversord7.vhd
     Info (12022): Found design unit 1: ConversorD7-Behavioral File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/ConversorD7/ConversorD7.vhd Line: 15
     Info (12023): Found entity 1: ConversorD7 File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/ConversorD7/ConversorD7.vhd Line: 6
 Info (12021): Found 2 design units, including 1 entities, in source file cafeteira.vhd
     Info (12022): Found design unit 1: Cafeteira-Behavioral File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 43
     Info (12023): Found entity 1: Cafeteira File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 6
-Warning (12019): Can't analyze file -- file ../WaterControl/waterControl.vhd is missing
 Info (12127): Elaborating entity "Cafeteira" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at Cafeteira.vhd(95): used implicit default value for signal "w_rst" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 95
-Warning (10541): VHDL Signal Declaration warning at Cafeteira.vhd(97): used implicit default value for signal "w_clk" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 97
-Warning (10492): VHDL Process Statement warning at Cafeteira.vhd(203): signal "w_f_repo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 203
-Warning (10631): VHDL Process Statement warning at Cafeteira.vhd(186): inferring latch(es) for signal or variable "o_l_cafe", which holds its previous value in one or more paths through the process File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Warning (10631): VHDL Process Statement warning at Cafeteira.vhd(186): inferring latch(es) for signal or variable "o_l_cafe_leite", which holds its previous value in one or more paths through the process File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Warning (10631): VHDL Process Statement warning at Cafeteira.vhd(186): inferring latch(es) for signal or variable "o_l_mocaccino", which holds its previous value in one or more paths through the process File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Warning (10631): VHDL Process Statement warning at Cafeteira.vhd(186): inferring latch(es) for signal or variable "o_l_tamanho", which holds its previous value in one or more paths through the process File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Warning (10631): VHDL Process Statement warning at Cafeteira.vhd(186): inferring latch(es) for signal or variable "o_l_acucar", which holds its previous value in one or more paths through the process File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Warning (10631): VHDL Process Statement warning at Cafeteira.vhd(186): inferring latch(es) for signal or variable "w_letra_0", which holds its previous value in one or more paths through the process File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Warning (10631): VHDL Process Statement warning at Cafeteira.vhd(186): inferring latch(es) for signal or variable "w_letra_1", which holds its previous value in one or more paths through the process File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Warning (10631): VHDL Process Statement warning at Cafeteira.vhd(186): inferring latch(es) for signal or variable "w_letra_2", which holds its previous value in one or more paths through the process File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Warning (10631): VHDL Process Statement warning at Cafeteira.vhd(186): inferring latch(es) for signal or variable "w_letra_3", which holds its previous value in one or more paths through the process File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Warning (10631): VHDL Process Statement warning at Cafeteira.vhd(186): inferring latch(es) for signal or variable "w_state", which holds its previous value in one or more paths through the process File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Warning (10631): VHDL Process Statement warning at Cafeteira.vhd(186): inferring latch(es) for signal or variable "w_opt", which holds its previous value in one or more paths through the process File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Warning (10631): VHDL Process Statement warning at Cafeteira.vhd(186): inferring latch(es) for signal or variable "o_l_reposicao", which holds its previous value in one or more paths through the process File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Warning (10873): Using initial value X (don't care) for net "w_acucar" at Cafeteira.vhd(98) File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 98
-Warning (10873): Using initial value X (don't care) for net "w_tamanho" at Cafeteira.vhd(99) File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 99
-Info (10041): Inferred latch for "o_l_reposicao" at Cafeteira.vhd(186) File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Info (10041): Inferred latch for "w_opt[0]" at Cafeteira.vhd(186) File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Info (10041): Inferred latch for "w_opt[1]" at Cafeteira.vhd(186) File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Info (10041): Inferred latch for "w_state[0]" at Cafeteira.vhd(186) File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Info (10041): Inferred latch for "w_state[1]" at Cafeteira.vhd(186) File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Info (10041): Inferred latch for "w_letra_3[0]" at Cafeteira.vhd(186) File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Info (10041): Inferred latch for "w_letra_3[1]" at Cafeteira.vhd(186) File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Info (10041): Inferred latch for "w_letra_3[2]" at Cafeteira.vhd(186) File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Info (10041): Inferred latch for "w_letra_2[0]" at Cafeteira.vhd(186) File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Info (10041): Inferred latch for "w_letra_2[1]" at Cafeteira.vhd(186) File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Info (10041): Inferred latch for "w_letra_2[2]" at Cafeteira.vhd(186) File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Info (10041): Inferred latch for "w_letra_1[0]" at Cafeteira.vhd(186) File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Info (10041): Inferred latch for "w_letra_1[1]" at Cafeteira.vhd(186) File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Info (10041): Inferred latch for "w_letra_1[2]" at Cafeteira.vhd(186) File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Info (10041): Inferred latch for "w_letra_0[0]" at Cafeteira.vhd(186) File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Info (10041): Inferred latch for "w_letra_0[1]" at Cafeteira.vhd(186) File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Info (10041): Inferred latch for "w_letra_0[2]" at Cafeteira.vhd(186) File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Info (10041): Inferred latch for "o_l_acucar" at Cafeteira.vhd(186) File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Info (10041): Inferred latch for "o_l_tamanho" at Cafeteira.vhd(186) File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Info (10041): Inferred latch for "o_l_mocaccino" at Cafeteira.vhd(186) File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Info (10041): Inferred latch for "o_l_cafe_leite" at Cafeteira.vhd(186) File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Info (10041): Inferred latch for "o_l_cafe" at Cafeteira.vhd(186) File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 186
-Info (12128): Elaborating entity "ConversorD7" for hierarchy "ConversorD7:U02" File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 123
-Info (12128): Elaborating entity "Processador" for hierarchy "Processador:U06" File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 156
-Warning (10540): VHDL Signal Declaration warning at Processador.vhd(15): used explicit default value for signal "o_f_pronto" because signal was never assigned a value File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/Processador.vhd Line: 15
-Warning (10540): VHDL Signal Declaration warning at Processador.vhd(16): used explicit default value for signal "o_f_preparo" because signal was never assigned a value File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/Processador.vhd Line: 16
-Warning (10540): VHDL Signal Declaration warning at Processador.vhd(17): used explicit default value for signal "o_valv_leite" because signal was never assigned a value File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/Processador.vhd Line: 17
-Warning (10540): VHDL Signal Declaration warning at Processador.vhd(18): used explicit default value for signal "o_valv_cafe" because signal was never assigned a value File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/Processador.vhd Line: 18
-Warning (10540): VHDL Signal Declaration warning at Processador.vhd(19): used explicit default value for signal "o_valv_chocolate" because signal was never assigned a value File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/Processador.vhd Line: 19
-Warning (10540): VHDL Signal Declaration warning at Processador.vhd(20): used explicit default value for signal "o_valv_acucar" because signal was never assigned a value File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/Processador.vhd Line: 20
-Warning (10540): VHDL Signal Declaration warning at Processador.vhd(21): used explicit default value for signal "o_valv_agua" because signal was never assigned a value File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/Processador.vhd Line: 21
-Warning (10541): VHDL Signal Declaration warning at Processador.vhd(22): used implicit default value for signal "o_f_repo" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/Processador.vhd Line: 22
-Warning (10540): VHDL Signal Declaration warning at Processador.vhd(30): used explicit default value for signal "w_start" because signal was never assigned a value File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/Processador.vhd Line: 30
-Warning (10540): VHDL Signal Declaration warning at Processador.vhd(31): used explicit default value for signal "w_clear" because signal was never assigned a value File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/Processador.vhd Line: 31
-Info (12128): Elaborating entity "Cronometro" for hierarchy "Cronometro:U07" File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 177
-Error (12005): Actual width (28) of port "i_valor" on instance "Processador:U06" is not compatible with the formal port width (24) declared by the instantiated entity File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 156
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 30 warnings
-    Error: Peak virtual memory: 4784 megabytes
-    Error: Processing ended: Thu Jul 28 17:58:26 2022
-    Error: Elapsed time: 00:00:18
-    Error: Total CPU time (on all processors): 00:00:37
+Warning (10492): VHDL Process Statement warning at Cafeteira.vhd(204): signal "w_f_repo" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 204
+Warning (10631): VHDL Process Statement warning at Cafeteira.vhd(187): inferring latch(es) for signal or variable "o_l_reposicao", which holds its previous value in one or more paths through the process File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 187
+Info (10041): Inferred latch for "o_l_reposicao" at Cafeteira.vhd(187) File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 187
+Info (12128): Elaborating entity "PLL_INTEL" for hierarchy "PLL_INTEL:U01" File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 114
+Info (12128): Elaborating entity "altpll" for hierarchy "PLL_INTEL:U01|altpll:altpll_component" File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/PLL/PLL_INTEL.vhd Line: 141
+Info (12130): Elaborated megafunction instantiation "PLL_INTEL:U01|altpll:altpll_component" File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/PLL/PLL_INTEL.vhd Line: 141
+Info (12133): Instantiated megafunction "PLL_INTEL:U01|altpll:altpll_component" with the following parameter: File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/PLL/PLL_INTEL.vhd Line: 141
+    Info (12134): Parameter "bandwidth_type" = "AUTO"
+    Info (12134): Parameter "clk0_divide_by" = "2"
+    Info (12134): Parameter "clk0_duty_cycle" = "50"
+    Info (12134): Parameter "clk0_multiply_by" = "3"
+    Info (12134): Parameter "clk0_phase_shift" = "0"
+    Info (12134): Parameter "compensate_clock" = "CLK0"
+    Info (12134): Parameter "inclk0_input_frequency" = "20000"
+    Info (12134): Parameter "intended_device_family" = "MAX 10"
+    Info (12134): Parameter "lpm_hint" = "CBX_MODULE_PREFIX=PLL_INTEL"
+    Info (12134): Parameter "lpm_type" = "altpll"
+    Info (12134): Parameter "operation_mode" = "NORMAL"
+    Info (12134): Parameter "pll_type" = "AUTO"
+    Info (12134): Parameter "port_activeclock" = "PORT_UNUSED"
+    Info (12134): Parameter "port_areset" = "PORT_USED"
+    Info (12134): Parameter "port_clkbad0" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkbad1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkloss" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkswitch" = "PORT_UNUSED"
+    Info (12134): Parameter "port_configupdate" = "PORT_UNUSED"
+    Info (12134): Parameter "port_fbin" = "PORT_UNUSED"
+    Info (12134): Parameter "port_inclk0" = "PORT_USED"
+    Info (12134): Parameter "port_inclk1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_locked" = "PORT_USED"
+    Info (12134): Parameter "port_pfdena" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phasecounterselect" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phasedone" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phasestep" = "PORT_UNUSED"
+    Info (12134): Parameter "port_phaseupdown" = "PORT_UNUSED"
+    Info (12134): Parameter "port_pllena" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanaclr" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanclk" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanclkena" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scandata" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scandataout" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scandone" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanread" = "PORT_UNUSED"
+    Info (12134): Parameter "port_scanwrite" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk0" = "PORT_USED"
+    Info (12134): Parameter "port_clk1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk2" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk3" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk4" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clk5" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena0" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena2" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena3" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena4" = "PORT_UNUSED"
+    Info (12134): Parameter "port_clkena5" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk0" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk1" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk2" = "PORT_UNUSED"
+    Info (12134): Parameter "port_extclk3" = "PORT_UNUSED"
+    Info (12134): Parameter "self_reset_on_loss_lock" = "OFF"
+    Info (12134): Parameter "width_clock" = "5"
+Info (12021): Found 1 design units, including 1 entities, in source file db/pll_intel_altpll.v
+    Info (12023): Found entity 1: PLL_INTEL_altpll File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/db/pll_intel_altpll.v Line: 31
+Info (12128): Elaborating entity "PLL_INTEL_altpll" for hierarchy "PLL_INTEL:U01|altpll:altpll_component|PLL_INTEL_altpll:auto_generated" File: d:/quartus/quartus/libraries/megafunctions/altpll.tdf Line: 898
+Info (12128): Elaborating entity "ConversorD7" for hierarchy "ConversorD7:U02" File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 124
+Info (12128): Elaborating entity "Processador" for hierarchy "Processador:U06" File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 157
+Warning (10492): VHDL Process Statement warning at Processador.vhd(123): signal "w_f_sec" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Processador/Processador.vhd Line: 123
+Info (12128): Elaborating entity "Cronometro" for hierarchy "Cronometro:U07" File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 178
+Warning (13012): Latch o_l_reposicao$latch has unsafe behavior File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 187
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal i_b_reposicao File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 14
+Warning (13004): Presettable and clearable registers converted to equivalent circuits with latches. Registers power-up to an undefined state, and DEVCLRn places the registers in an undefined state.
+    Warning (13310): Register "w_state[1]" is converted into an equivalent circuit using register "w_state[1]~_emulated" and latch "w_state[1]~1" File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 189
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "o_display_0[6]" is stuck at GND File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 34
+    Warning (13410): Pin "o_display_0[0]" is stuck at GND File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 34
+    Warning (13410): Pin "o_display_2[6]" is stuck at GND File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 36
+    Warning (13410): Pin "o_display_2[0]" is stuck at GND File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 36
+    Warning (13410): Pin "o_display_3[0]" is stuck at GND File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 37
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "i_s_reposicao" File: D:/Users/lsdeo/Documents/Ararangua/Eng. Comp/LDH/Cafeteira_Repo/Cafeteira/Cafeteira.vhd Line: 15
+Info (21057): Implemented 485 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 43 output pins
+    Info (21061): Implemented 429 logic cells
+    Info (21065): Implemented 1 PLLs
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 16 warnings
+    Info: Peak virtual memory: 4808 megabytes
+    Info: Processing ended: Fri Jul 29 05:40:12 2022
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:41
 
 

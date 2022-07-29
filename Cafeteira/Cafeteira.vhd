@@ -26,6 +26,8 @@ entity Cafeteira is
 		o_l_reposicao		: out std_logic;
 		o_l_preparo			: out std_logic;
 		o_l_pronto			: out std_logic;
+		o_l_agua			: out std_logic;
+		o_l_temp			: out std_logic;
 		o_v_leite			: out std_logic;
 		o_v_cafe			: out std_logic;
 		o_v_chocolate		: out std_logic;
@@ -34,9 +36,7 @@ entity Cafeteira is
 		o_display_0			: out std_logic_vector(0 to 6);
 		o_display_1			: out std_logic_vector(0 to 6);
 		o_display_2			: out std_logic_vector(0 to 6);
-		o_display_3			: out std_logic_vector(0 to 6);
-		o_l_agua			: out std_logic;
-		o_l_temp			: out std_logic
+		o_display_3			: out std_logic_vector(0 to 6)
 	);
 end Cafeteira;
 
@@ -48,7 +48,7 @@ architecture Behavioral of Cafeteira is
 			i_rst 			: in  std_logic;
 			i_start			: in  std_logic;
 			i_clear   		: in  std_logic;
-			o_counter		: out std_logic_vector(27 downto 0)
+			o_counter		: out std_logic_vector(23 downto 0)
 		 );
 	end component;
 	
@@ -63,32 +63,32 @@ architecture Behavioral of Cafeteira is
 
 	component Processador
 		port(
-			i_rst				: in std_logic;
-			i_clk				: in std_logic;
-			i_state 			: in std_logic_vector(1 downto 0);
-			i_opt				: in std_logic_vector(1 downto 0);
-			i_tamanho			: in std_logic;
-			i_acucar			: in std_logic;
-			i_valor				: in std_logic_vector(27 downto 0);
-			o_f_pronto			: out std_logic;
-			o_f_preparo			: out std_logic;
-			o_valv_leite		: out std_logic;
-			o_valv_cafe			: out std_logic;
-			o_valv_chocolate	: out std_logic;
-			o_valv_acucar		: out std_logic;
-			o_valv_agua			: out std_logic;
-			o_f_repo			: out std_logic;
-			o_start				: out std_logic;
-			o_clear				: out std_logic
+			i_rst			: in std_logic;
+			i_clk			: in std_logic;
+			i_state 		: in std_logic_vector(1 downto 0);
+			i_opt			: in std_logic_vector(1 downto 0);
+			i_tamanho		: in std_logic;
+			i_acucar		: in std_logic;
+			i_valor			: in std_logic_vector(23 downto 0);
+			o_f_pronto		: out std_logic;
+			o_f_preparo		: out std_logic;
+			o_valv_leite	: out std_logic;
+			o_valv_cafe		: out std_logic;
+			o_valv_chocolate: out std_logic;
+			o_valv_acucar	: out std_logic;
+			o_valv_agua		: out std_logic;
+			o_f_repo		: out std_logic;
+			o_start			: out std_logic;
+			o_clear			: out std_logic
 		);
 	end component;
 
 	component PLL_INTEL
 		port(
-			areset		: IN std_LOGIC  := '0';
-			inclk0		: IN std_LOGIC  := '0';
-			c0				: OUT std_LOGIC ;
-			locked		: OUT std_LOGIC 
+			areset			: in std_logic  := '0';
+			inclk0			: in std_logic  := '0';
+			c0				: out std_logic ;
+			locked			: out std_logic 
 		);
 	end component;	
 
@@ -104,58 +104,59 @@ architecture Behavioral of Cafeteira is
 	signal w_letra_3		: std_logic_vector(2 downto 0);
 	signal w_f_repo			: std_logic;
 	signal w_f_pronto		: std_logic;
-	signal w_counter		: std_logic_vector(27 downto 0);
+	signal w_counter		: std_logic_vector(23 downto 0);
 	signal w_start			: std_logic;
 	signal w_clear			: std_logic;
+	signal w_locked			: std_logic;
 
 begin
 	
-	-- U01 : PLL_INTEL
-	-- 	port map(
-	-- 		areset	 	=> not i_b_rst,
-	-- 		inclk0	 	=> i_clk,
-	-- 		c0	 		=> w_clk,
-	-- 		locked	 	=> w_locked
-	-- );
+	U01 : PLL_INTEL
+		port map(
+			areset	 		=> not i_b_rst,
+			inclk0	 		=> i_clk,
+			c0	 			=> w_clk,
+			locked	 		=> w_locked
+	);
 
-	-- w_rst <= not w_locked;
+	w_rst <= not w_locked;
 
 	U02 : ConversorD7
 		Port Map (
-			i_clk		=> w_clk,
-			i_rst 		=> i_b_rst,
-			i_letra 	=> w_letra_0,
-			o_display	=> o_display_0
+			i_clk			=> w_clk,
+			i_rst 			=> w_rst,
+			i_letra 		=> w_letra_0,
+			o_display		=> o_display_0
 		);
 
 
 	U03 : ConversorD7 
 		Port Map (
-			i_clk		=> w_clk,
-			i_rst 		=> i_b_rst,
-			i_letra 	=> w_letra_1,
-			o_display	=> o_display_1
+			i_clk			=> w_clk,
+			i_rst 			=> w_rst,
+			i_letra 		=> w_letra_1,
+			o_display		=> o_display_1
 		);
 
 	U04 : ConversorD7 
 		Port Map (
-			i_clk		=> w_clk,
-			i_rst 		=> i_b_rst,
-			i_letra 	=> w_letra_2,
-			o_display	=> o_display_2
+			i_clk			=> w_clk,
+			i_rst 			=> w_rst,
+			i_letra 		=> w_letra_2,
+			o_display		=> o_display_2
 		);
 
 	U05 : ConversorD7 
 		Port Map (
-			i_clk		=> w_clk,
-			i_rst 		=> i_b_rst,
-			i_letra 	=> w_letra_3,
-			o_display	=> o_display_3
+			i_clk			=> w_clk,
+			i_rst 			=> w_rst,
+			i_letra 		=> w_letra_3,
+			o_display		=> o_display_3
 		);
 
 	U06 : Processador 
 		Port Map(
-			i_rst			=> i_b_rst,
+			i_rst			=> w_rst,
 			i_clk			=> w_clk,
 			i_state			=> w_state,
 			i_opt			=> w_opt,

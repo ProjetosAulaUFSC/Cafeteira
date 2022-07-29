@@ -9,12 +9,12 @@ entity Cronometro is
 		i_rst 			: in  std_logic;
 		i_start			: in  std_logic;
 		i_clear   		: in  std_logic;
-		o_counter		: out std_logic_vector(27 downto 0)
+		o_counter		: out std_logic_vector(23 downto 0)
 	 );
 end Cronometro;
 
 architecture Behavioral of Cronometro is
-	signal w_counter	: std_LOGIC_vector(27 DOWNTO 0) := (others => '0');
+	signal w_counter	: std_LOGIC_vector(23 DOWNTO 0) := (others => '0');
 	
 	-- 0010 1111 1010 1111 0000 1000 0000
 begin

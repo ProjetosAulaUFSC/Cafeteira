@@ -6,22 +6,22 @@ use ieee.numeric_std.all;
 entity Processador is
 	port(
 		i_rst				: in std_logic;
-		i_clk				: in std_logic;
-		i_state 			: in std_logic_vector(1 downto 0);
-		i_opt				: in std_logic_vector(1 downto 0);
-		i_tamanho			: in std_logic;
-		i_acucar			: in std_logic;
-		i_valor				: in std_logic_vector(23 downto 0);
-		o_f_pronto			: out std_logic:='0';
-		o_f_preparo			: out std_logic:='0';
-		o_valv_leite		: out std_logic:='0';
-		o_valv_cafe			: out std_logic:='0';
-		o_valv_chocolate	: out std_logic:='0';
-		o_valv_acucar		: out std_logic:='0';
-		o_valv_agua			: out std_logic:='0';
-		o_f_repo			: out std_logic;
-		o_start				: out std_logic;
-		o_clear				: out std_logic
+		i_clk			: in std_logic;
+		i_state 		: in std_logic_vector(1 downto 0);
+		i_opt			: in std_logic_vector(1 downto 0);
+		i_tamanho		: in std_logic;
+		i_acucar		: in std_logic;
+		i_valor			: in std_logic_vector(23 downto 0);
+		o_f_pronto		: out std_logic:='0';
+		o_f_preparo		: out std_logic:='0';
+		o_valv_leite	: out std_logic:='0';
+		o_valv_cafe		: out std_logic:='0';
+		o_valv_chocolate: out std_logic:='0';
+		o_valv_acucar	: out std_logic:='0';
+		o_valv_agua		: out std_logic:='0';
+		o_f_repo		: out std_logic;
+		o_start			: out std_logic;
+		o_clear			: out std_logic
 	);
 end Processador;
 
